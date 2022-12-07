@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --ff-karla: "Karla", sans-serif;
+
+  /* color pallete */
+  --clr-p-400: hsl(179, 62%, 43%);
+  --clr-p-300: hsla(179, 62%, 43%, 0.8);
+  --clr-p-200: hsl(71, 73%, 54%);
+  --clr-n-100: hsl(0, 100%, 100%);
+  --clr-n-200: hsl(204, 43%, 93%);
+  --clr-n-300: hsl(218, 22%, 67%);
+
+  /* font weight */
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--ff-karla);
+  padding: 3rem 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-weight: var(--fw-400);
+  background-color: var(--clr-n-200);
+}
+
+/* cards */
+.container {
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  color: var(--clr-n-200);
+}
+.primary-card {
+  background-color: var(--clr-n-100);
+}
+.primary-card > h1 {
+  font-weight: var(--fw-700);
+  font-size: 1.2rem;
+  color: var(--clr-p-400);
+}
+.primary-card > p:nth-of-type(1) {
+  color: var(--clr-p-200);
+  font-weight: var(--fw-700);
+}
+.primary-card > p:nth-of-type(2) {
+  color: var(--clr-n-300);
+}
+.secondary-card-1 {
+  background-color: var(--clr-p-400);
+  color: var(--clr-n-100);
+}
+.secondary-card-1 > h2 {
+  font-weight: var(--fw-700);
+}
+.price-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.sub-price {
+  font-size: 2rem;
+}
+.sub-month {
+  color: var(--clr-n-200);
+}
+.btn {
+  background-color: var(--clr-p-200);
+  color: var(--clr-n-100);
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  border: none;
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+.secondary-card-2 {
+  background-color: var(--clr-p-300);
+}
+.secondary-card-2 > h2 {
+  color: var(--clr-n-100);
+  font-weight: var(--fw-700);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 700px;
+    grid-template-areas:
+      "primary-area primary-area"
+      "secondary-area-1 secondary-area-2";
+  }
+  .card {
+    padding: 3rem;
+  }
+  .primary-card {
+    grid-area: primary-area;
+  }
+  .primary-card > h1 {
+    font-size: 1.5rem;
+  }
+  .secondary-card-1 {
+    grid-area: secondary-area-1;
+  }
+  .secondary-card-2 {
+    grid-area: secondary-area-2;
+  }
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
